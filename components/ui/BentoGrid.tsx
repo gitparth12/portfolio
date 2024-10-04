@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
 /* eslint-disable @next/next/no-img-element */
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './GradientBg';
 import { GridGlobe } from './GridGlobe';
 import { useState } from 'react';
-import animationData from '@/data/confetti.json'
+import animationData from '@/data/confetti.json';
 import Lottie from 'react-lottie';
 import MagicButton from './MagicButton';
 import { IoCopyOutline } from 'react-icons/io5';
@@ -53,7 +53,11 @@ export const BentoGridItem = ({
   const handleCopy = () => {
     navigator.clipboard.writeText('parthbhargava0@gmail.com');
     setCopied(true);
-  }
+  };
+
+  // const GridGlobe = dynamic(() => import("./GridGlobe").then((m) => m.GridGlobe), {
+  //   ssr: false,
+  // });
 
   return (
     <div
@@ -139,14 +143,16 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <div className={`absolute -bottom-5 right-0`}>
-                <Lottie options={{
-                  loop: copied,
-                  autoplay: copied,
-                  animationData,
-                  rendererSettings: {
-                    preserveAspectRatio: 'xMidYMid slice',
-                  }
-                }} />
+                <Lottie
+                  options={{
+                    loop: copied,
+                    autoplay: copied,
+                    animationData,
+                    rendererSettings: {
+                      preserveAspectRatio: 'xMidYMid slice',
+                    },
+                  }}
+                />
               </div>
 
               <MagicButton

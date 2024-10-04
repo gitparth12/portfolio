@@ -1,3 +1,6 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+  "rules": {
+    "max-len": ["error", { "code": 80, "ignoreStrings": false }]
+  }
 }

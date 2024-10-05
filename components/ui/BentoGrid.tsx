@@ -65,7 +65,6 @@ export const BentoGridItem = ({
   }, []);
 
   const GridGlobe = dynamic(() => import('./GridGlobe'), { ssr: false });
-
   const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
   return (

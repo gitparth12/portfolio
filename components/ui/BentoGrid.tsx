@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
+'use client';
 
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './GradientBg';
-// import GridGlobe from './GridGlobe';
-import { useState, useEffect } from 'react';
+import GridGlobe from './GridGlobe';
+import { useState } from 'react';
 import animationData from '@/data/confetti.json';
-// import Lottie from 'react-lottie';
 import MagicButton from './MagicButton';
 import { IoCopyOutline } from 'react-icons/io5';
 import dynamic from 'next/dynamic';
@@ -56,16 +55,16 @@ export const BentoGridItem = ({
     setCopied(true);
   };
 
-  const [docEnv, setDocEnv] = useState(false);
+  // const [docEnv, setDocEnv] = useState(false);
 
-  useEffect(() => {
-    if (typeof document !== "undefined") {
-      setDocEnv(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (typeof document !== "undefined") {
+  //     setDocEnv(true);
+  //   }
+  // }, []);
 
-  const GridGlobe = dynamic(() => import('./GridGlobe'), { ssr: false });
-  const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
+  // const GridGlobe = dynamic(() => import('./GridGlobe'), { ssr: false });
+  const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 
   return (
     <div
@@ -100,7 +99,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        {id === 6 && docEnv && (
+        {id === 6 && (
           <BackgroundGradientAnimation>
             {/* <div className="absolute z-50 flex items-center justify-center text-white font-bold" /> */}
           </BackgroundGradientAnimation>
@@ -119,7 +118,7 @@ export const BentoGridItem = ({
             {title}
           </div>
 
-          {id === 2 && docEnv && <GridGlobe />}
+          {id === 2 && <GridGlobe />}
 
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">

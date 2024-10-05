@@ -3,12 +3,13 @@
 
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './GradientBg';
-import GridGlobe from './GridGlobe';
+// import GridGlobe from './GridGlobe';
 import { useState, useEffect } from 'react';
 import animationData from '@/data/confetti.json';
-import Lottie from 'react-lottie';
+// import Lottie from 'react-lottie';
 import MagicButton from './MagicButton';
 import { IoCopyOutline } from 'react-icons/io5';
+import dynamic from 'next/dynamic';
 
 export const BentoGrid = ({
   className,
@@ -58,17 +59,14 @@ export const BentoGridItem = ({
   const [docEnv, setDocEnv] = useState(false);
 
   useEffect(() => {
-    if (document !== undefined) {
+    if (typeof document !== "undefined") {
       setDocEnv(true);
-    }
-    else {
-      setDocEnv(false);
     }
   }, []);
 
-  // const GridGlobe = dynamic(() => import("./GridGlobe").then((m) => m.GridGlobe), {
-  //   ssr: false,
-  // });
+  const GridGlobe = dynamic(() => import('./GridGlobe'), { ssr: false });
+
+  const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
   return (
     <div
@@ -103,7 +101,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
-        {id === 6 && (
+        {id === 6 && docEnv && (
           <BackgroundGradientAnimation>
             {/* <div className="absolute z-50 flex items-center justify-center text-white font-bold" /> */}
           </BackgroundGradientAnimation>
@@ -155,14 +153,9 @@ export const BentoGridItem = ({
             <div className="mt-5 relative">
               <div className={`absolute -bottom-5 right-0`}>
                 <Lottie
-                  options={{
-                    loop: copied,
-                    autoplay: copied,
-                    animationData,
-                    rendererSettings: {
-                      preserveAspectRatio: 'xMidYMid slice',
-                    },
-                  }}
+                  loop={copied}
+                  autoplay={copied}
+                  animationData={animationData}
                 />
               </div>
 

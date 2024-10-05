@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from 'react';
 import dynamic from 'next/dynamic';
@@ -7,7 +7,7 @@ const World = dynamic(() => import('./Globe').then((m) => m.World), {
   ssr: false,
 });
 
-export function GridGlobe() {
+const GridGlobe = () => {
   const globeConfig = {
     pointSize: 4,
     globeColor: '#062056',
@@ -404,4 +404,5 @@ export function GridGlobe() {
       </div>
     </div>
   );
-}
+};
+export default GridGlobe;

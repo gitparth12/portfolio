@@ -33,7 +33,7 @@ const Hero = () => {
             words="Hi, I'm Parth."
           />
           <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            A software engineer based in Sydney.
+            A <span className="text-purple">software engineer</span> based in Sydney.
           </p>
 
           <a href="#about">

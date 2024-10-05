@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-require-imports */
 import type { Config } from 'tailwindcss';
 
 const svgToDataUri = require('mini-svg-data-uri');
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const colors = require('tailwindcss/colors');
 
 const {
@@ -194,7 +196,7 @@ const config = {
   ],
 } satisfies Config;
 
-function addVariablesForColors({ addBase, theme }: unknown) {
+function addVariablesForColors({ addBase, theme }: any) {
   const allColors = flattenColorPalette(theme('colors'));
   const newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val]),

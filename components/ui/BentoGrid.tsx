@@ -1,10 +1,10 @@
-'use client';
-
 /* eslint-disable @next/next/no-img-element */
+"use client";
+
 import { cn } from '@/lib/utils';
 import { BackgroundGradientAnimation } from './GradientBg';
-import { GridGlobe } from './GridGlobe';
-import { useState } from 'react';
+import GridGlobe from './GridGlobe';
+import { useState, useEffect } from 'react';
 import animationData from '@/data/confetti.json';
 import Lottie from 'react-lottie';
 import MagicButton from './MagicButton';
@@ -54,6 +54,17 @@ export const BentoGridItem = ({
     navigator.clipboard.writeText('parthbhargava0@gmail.com');
     setCopied(true);
   };
+
+  const [docEnv, setDocEnv] = useState(false);
+
+  useEffect(() => {
+    if (document !== undefined) {
+      setDocEnv(true);
+    }
+    else {
+      setDocEnv(false);
+    }
+  }, []);
 
   // const GridGlobe = dynamic(() => import("./GridGlobe").then((m) => m.GridGlobe), {
   //   ssr: false,
@@ -107,11 +118,11 @@ export const BentoGridItem = ({
           <div className="font-sans font-extralight text-[#c1c2d3] text-sm md:text-xs lg:text-base z-10">
             {description}
           </div>
-          <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-10">
+          <div className="font-sans font-bold text-lg lg:text-3xl max-w-96 z-20">
             {title}
           </div>
 
-          {id === 2 && <GridGlobe />}
+          {id === 2 && docEnv && <GridGlobe />}
 
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">

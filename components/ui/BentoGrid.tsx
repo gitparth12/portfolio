@@ -33,6 +33,7 @@ export const BentoGridItem = ({
   className,
   title,
   description,
+  subDescription,
   id,
   img,
   imgClassName,
@@ -42,6 +43,7 @@ export const BentoGridItem = ({
   className?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
+  subDescription?: string | React.ReactNode;
   id: number;
   img?: string;
   imgClassName?: string;
@@ -99,6 +101,7 @@ export const BentoGridItem = ({
             />
           )}
         </div>
+
         {id === 6 && (
           <BackgroundGradientAnimation>
             {/* <div className="absolute z-50 flex items-center justify-center text-white font-bold" /> */}
@@ -121,9 +124,9 @@ export const BentoGridItem = ({
           {id === 2 && <GridGlobe />}
 
           {id === 3 && (
-            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3 lg:-right-2">
-              <div className="flex flex-col gap-3 lg:gap-8">
-                {['React.js', 'Next.js', 'TypeScript'].map((item) => (
+            <div className="flex gap-1 lg:gap-5 w-fit absolute -right-2 lg:-right-2">
+              <div className="flex flex-col gap-3 lg:gap-6 transform translate-y-[71%]">
+                {['R', 'see this?'].map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
@@ -133,9 +136,32 @@ export const BentoGridItem = ({
                 ))}
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
               </div>
-              <div className="flex flex-col gap-3 lg:gap-8">
+              <div className="flex flex-col gap-3 lg:gap-6 transform translate-y-[63%]">
+                {['AWS', 'TypeScript'].map((item) => (
+                  <span
+                    key={item}
+                    className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-col gap-3 lg:gap-6">
+                {['Tailwind CSS', 'Next.js', 'Tailwind CSS', 'SQL'].map(
+                  (item) => (
+                    <span
+                      key={item}
+                      className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"
+                    >
+                      {item}
+                    </span>
+                  ),
+                )}
                 <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
-                {['Vue.js', 'AWS', 'MongoDB'].map((item) => (
+              </div>
+              <div className="flex flex-col gap-3 lg:gap-6">
+                <span className="py-4 px-3 rounded-lg text-center bg-[#10132E]" />
+                {['C/C++', 'Python', 'Java', 'C/C++'].map((item) => (
                   <span
                     key={item}
                     className="py-2 lg:py-4 lg:px-3 px-3 text-xs lg:text-base opacity-50 lg:opacity-100 rounded-lg text-center bg-[#10132E]"

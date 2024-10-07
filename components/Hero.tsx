@@ -36,7 +36,7 @@ const Hero = () => {
             based in Sydney.
           </p>
 
-          <a href="#experience">
+          <a href="#projects">
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}

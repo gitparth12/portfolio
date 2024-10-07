@@ -90,7 +90,7 @@ export const projects = [
     id: 3,
     title: 'My Portfolio (yes this one)',
     des: "Built from scratch using technologies I've always wanted to learn, to display my projects and myself.",
-    img: '/website.svg',
+    img: '/portfolio.svg',
     iconLists: ['/threejs.svg', '/tailwind.svg', '/typescript.svg', '/next.svg'],
     link: 'https://github.com/gitparth12/portfolio',
   },

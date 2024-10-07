@@ -25,7 +25,7 @@ const RecentProjects = () => {
                 <img
                   src={img}
                   alt={title}
-                  className="absolute z-10 w-[70%] mt-[30%] bottom-0 transfrom rotate-3 translate-y-3 rounded-lg"
+                  className="absolute z-10 w-[90%] h-[90%] translate-y-[10%] lg:translate-y-[5%] mt-[10%] bottom-0 transfrom rotate-3 rounded-lg"
                 />
               </div>
               <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">

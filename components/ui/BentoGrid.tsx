@@ -51,10 +51,9 @@ export const BentoGridItem = ({
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('parthbhargava0@gmail.com');
+    navigator.clipboard.writeText('reach.parthbhargava@gmail.com');
     setCopied(true);
   };
-
 
   const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 

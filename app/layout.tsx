@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
-import SentryFeedbackWidget from '@/components/ui/sentry-feedback-widget';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -41,7 +40,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <SentryFeedbackWidget />
         </ThemeProvider>
       </body>
     </html>
